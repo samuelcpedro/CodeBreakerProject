@@ -7,6 +7,11 @@ function guess() {
 	if (answer.value.length == 0 && attempt.value.length == 0) {
 		setHiddenFields ();
 	}
+
+	if (!validateInput(input.value)) {
+		return false;
+	}
+		++attempt;
 }
 
 //implement new functions here
