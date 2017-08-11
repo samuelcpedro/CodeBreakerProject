@@ -11,7 +11,7 @@ function guess() {
 	if (!validateInput(input.value)) {
 		return false;
 	}
-		++attempt;
+	attempt++;
 }
 
 //implement new functions here
