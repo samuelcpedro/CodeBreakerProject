@@ -21,7 +21,16 @@ var setHiddenFields = function(){
 	return answer.value = aux.toString(10);
 };
 
-function setMessage (message) {
+var setMessage = function(message) {
 	let msg_label = document.getElementById('message');
 	msg_label.innerHTML = message;
+};
+
+var validateInput = function(argument) {
+	if (argument.length === 4) {
+		return true;
+	} else {
+		setMessage ("Guesses must be exactly 4 characters long.");
+		return false;
+	}
 }
