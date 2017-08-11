@@ -7,10 +7,10 @@ function guess() {
 }
 
 //implement new functions here
-function setHiddenFields(){
+var setHiddenFields = function(){
 	//Vou guardar a parte inteira do valor produzido pelo random multiplicado por 10000
 	answer = Math.floor(Math.random() * 10000); //The maximum is exclusive and the minimum is inclusive
 	//vou repetir x vezes a string "0" até ter o a string answer ter tamanho 4
 	//console.log(answer);
-	//return answer = "0".repeat(4-String(answer).length) + answer.toString(10);
+	answer.value = "0".repeat(4-String(answer).length) + answer.toString(10);
 };
