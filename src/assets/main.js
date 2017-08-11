@@ -20,3 +20,8 @@ var setHiddenFields = function(){
 
 	return answer.value = aux.toString(10);
 };
+
+function setMessage (message) {
+	let msg_label = document.getElementById('message');
+	msg_label.innerHTML = message;
+}
