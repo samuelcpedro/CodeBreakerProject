@@ -1,4 +1,5 @@
 let NR_OF_DIGITS = 4
+let MAX_OF_ATTEMPTS = 10;
 let answer = document.getElementById('answer');
 let attempt = document.getElementById('attempt');
 
@@ -14,9 +15,13 @@ function guess() {
 	}
 
 	attempt.value++;
-	
+	//getResults return true
 	if(getResults(input.value)){
+	//show message "You Win! :)"
 		setMessage("You Win! :)");
+	//if getResults return false and the number of attempts >= to 10 return msg "You Lose! :("
+	}else if(attempt.value >= MAX_OF_ATTEMPTS){
+		setMessage("You Lose! :(");
 	}
 }
 
