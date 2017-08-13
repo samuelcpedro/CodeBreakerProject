@@ -20,10 +20,12 @@ function guess() {
 	//show message "You Win! :)"
 		setMessage("You Win! :)");
 		showAnswer(true);
+		showReplay();
 	//if getResults return false and the number of attempts >= to 10 return msg "You Lose! :("
 	}else if(attempt.value >= MAX_OF_ATTEMPTS){
 		setMessage("You Lose! :(");
 		showAnswer(false);
+		showReplay();
 	}else{
 		setMessage("Incorrect, try again.");
 	}
