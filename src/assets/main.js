@@ -91,3 +91,14 @@ var showAnswer = function(argument) {
 	//if the user get the answer or not code classname will change
 	code.className = argument ? 'code success' : 'code failure';
 }
+
+var showReplay = function() {
+	//get label element code
+	let guessing_div = document.getElementById('guessing-div');
+	//set innerHTML to answers value
+	guessing_div.style.display = 'none';
+	//get label element code
+	let replay_div = document.getElementById('replay-div');
+	//set innerHTML to answers value
+	replay_div.style.display = 'block';
+}
