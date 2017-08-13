@@ -80,3 +80,12 @@ var getResults = function(argument) {
 	//if the number of digits were equal to number of digits that were in the correct position return true else false
 	return NR_OF_DIGITS == countCorrecDigits;
 }
+
+var showAnswer = function(argument) {
+	//get label element code
+	let code = document.getElementById('code');
+	//set innerHTML to answers value
+	code.innerHTML = answer.value;
+	//if the user get the answer or not code classname will change
+	code.className = argument ? 'success' : 'failure';
+}
