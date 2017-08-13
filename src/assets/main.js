@@ -19,9 +19,11 @@ function guess() {
 	if(getResults(input.value)){
 	//show message "You Win! :)"
 		setMessage("You Win! :)");
+		showAnswer(true);
 	//if getResults return false and the number of attempts >= to 10 return msg "You Lose! :("
 	}else if(attempt.value >= MAX_OF_ATTEMPTS){
 		setMessage("You Lose! :(");
+		showAnswer(false);
 	}else{
 		setMessage("Incorrect, try again.");
 	}
@@ -87,5 +89,5 @@ var showAnswer = function(argument) {
 	//set innerHTML to answers value
 	code.innerHTML = answer.value;
 	//if the user get the answer or not code classname will change
-	code.className = argument ? 'success' : 'failure';
+	code.className = argument ? 'code success' : 'code failure';
 }
