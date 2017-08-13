@@ -11,6 +11,7 @@ function guess() {
 	if (!validateInput(input.value)) {
 		return false;
 	}
+	getResults(input.value);
 	attempt.value++;
 }
 
@@ -38,4 +39,28 @@ var validateInput = function(argument) {
 		setMessage ("Guesses must be exactly 4 characters long.");
 		return false;
 	}
+}
+
+var getResults = function(argument) {
+	//create auxiliar var to save the struture for analisys of the answwer of the user
+	let auxHTML = '';
+	//Get results element to add a div with info about the guess that was made
+	let results = document.getElementById('results');
+	//save first lines
+	auxHTML += '<div class="row"><span class="col-md-6">' + argument + '</span><div class="col-md-6">';
+	//for each letter of the answer we will see
+	for (var i= 0; i < 4;  i++) {
+		//if the number in position i of the answer is equal to the number in the same position of the guess
+		if (answer.value[i] == argument[i]) {
+			auxHTML += '<span class="glyphicon glyphicon-ok"></span>';
+		//else if the number in positon i of the guess exist in the answer
+		}else if(answer.value.indexOf(argument[i]) !== -1){
+			auxHTML += '<span class="glyphicon glyphicon-transfer"></span>';
+		//else just say that that number doesnt exist
+		}else{
+			auxHTML += '<span class="glyphicon glyphicon-remove"></span>';
+		}
+	}
+	//save the closing tags of the divs that were opended
+	results.innerHTML += auxHTML + '</div></div>'; 
 }
