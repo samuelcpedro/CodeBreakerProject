@@ -1,3 +1,4 @@
+let NR_OF_DIGITS = 4
 let answer = document.getElementById('answer');
 let attempt = document.getElementById('attempt');
 
@@ -42,6 +43,7 @@ var validateInput = function(argument) {
 }
 
 var getResults = function(argument) {
+	let countCorrecDigits = 0;
 	//create auxiliar var to save the struture for analisys of the answwer of the user
 	let auxHTML = '';
 	//Get results element to add a div with info about the guess that was made
@@ -49,10 +51,11 @@ var getResults = function(argument) {
 	//save first lines
 	auxHTML += '<div class="row"><span class="col-md-6">' + argument + '</span><div class="col-md-6">';
 	//for each letter of the answer we will see
-	for (var i= 0; i < 4;  i++) {
+	for (var i= 0; i < NR_OF_DIGITS;  i++) {
 		//if the number in position i of the answer is equal to the number in the same position of the guess
 		if (answer.value[i] == argument[i]) {
 			auxHTML += '<span class="glyphicon glyphicon-ok"></span>';
+			countCorrecDigits++;
 		//else if the number in positon i of the guess exist in the answer
 		}else if(answer.value.indexOf(argument[i]) !== -1){
 			auxHTML += '<span class="glyphicon glyphicon-transfer"></span>';
@@ -62,5 +65,7 @@ var getResults = function(argument) {
 		}
 	}
 	//save the closing tags of the divs that were opended
-	results.innerHTML += auxHTML + '</div></div>'; 
+	results.innerHTML += auxHTML + '</div></div>';
+	//if the number of digits were equal to number of digits that were in the correct position return true else false
+	return NR_OF_DIGITS == countCorrecDigits;
 }
