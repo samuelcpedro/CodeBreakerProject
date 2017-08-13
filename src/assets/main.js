@@ -22,6 +22,8 @@ function guess() {
 	//if getResults return false and the number of attempts >= to 10 return msg "You Lose! :("
 	}else if(attempt.value >= MAX_OF_ATTEMPTS){
 		setMessage("You Lose! :(");
+	}else{
+		setMessage("Incorrect, try again.");
 	}
 }
 
