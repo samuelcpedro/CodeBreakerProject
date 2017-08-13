@@ -12,8 +12,12 @@ function guess() {
 	if (!validateInput(input.value)) {
 		return false;
 	}
-	getResults(input.value);
+
 	attempt.value++;
+	
+	if(getResults(input.value)){
+		setMessage("You Win! :)");
+	}
 }
 
 //implement new functions here
